@@ -1,0 +1,100 @@
+env:
+    global:
+        - REPO_DIR=udon2
+        # Commit from your-project that you want to build
+        - BUILD_COMMIT=v0.1a
+        # pip dependencies to _build_ your project
+        - BUILD_DEPENDS="six"
+        # pip dependencies to _test_ your project.  Include any dependencies
+        # that you need, that are also specified in BUILD_DEPENDS, this will be
+        # a separate install.
+        # Now see the Uploads section for the stuff you need to
+        # upload your wheels after CI has built them.
+
+# You will likely prefer "language: generic" for travis configuration,
+# rather than, say "language: python". Multibuild doesn't use
+# Travis-provided Python but rather installs and uses its own, where the
+# Python version is set from the MB_PYTHON_VERSION variable. You can still
+# specify a language here if you need it for some unrelated logic and you
+# can't use Multibuild-provided Python or other software present on a
+# builder.
+language: generic
+
+# For CPython macOS builds only, the minimum supported macOS version and
+# architectures of any C extensions in the wheel are set with the variable
+# MB_PYTHON_OSX_VER: 10.9 (64-bit only) or 10.6 (64/32-bit dual arch). By
+# default this is set to the highest available for the Python version selected
+# using MB_PYTHON_VERSION. You should only need to set this explicitly if you
+# are building a 10.6 dual-arch build for a CPython version where both a 10.9 and
+# 10.6 build are available (for example, 2.7 or 3.7).
+# All PyPy macOS builds are 64-bit only.
+
+# Required in Linux to invoke `docker` ourselves
+services: docker
+
+# Host distribution.  This is the distribution from which we run the build
+# and test containers, via docker.
+dist: xenial
+
+matrix:
+  include:
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=i686
+        - MB_ML_VER=2010
+
+before_install:
+    - source multibuild/common_utils.sh
+    - source multibuild/travis_steps.sh
+    - before_install
+
+install:
+    # Maybe get and clean and patch source
+    - clean_code $REPO_DIR $BUILD_COMMIT
+    - build_wheel $REPO_DIR $PLAT
+
+script:
+    - install_run $PLAT
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "iC8gHFYaDvPbjsWRwzPoK33CFdmAGgP8jqmd17XQADFV7druuH1S/HPZnGL4eUUT0p6t7yJHQPK+yGvo8bpBJ0hMzYoHzU1NSKEO2WzgzWKCOqfRw/EiDsBb3Com8Xf2cyPUGqEa8yol38byKS1CJXqSzLEC//0uwUdMidqp/9TxO7Evo6Em6xXPC31nPdPNqs5FP6teV3stZfX3+Ges5suWj24lX9CPZnSNUpxeIWZBkpGJmYlfApgSiO6KpmQ4w4TFeDo73SXTxTGtyFTtu/XnaXfIBIsu01EEgSNzsXLLQ+8LTdQFpRbxXfIKHj1zaQRyTgRCu511sCgq5dy2MLSBF3nEzUimuUEgv6Xtf9CqlVsp5C2pLVn/Br87fxtSBTb1Jq7dTOZqtxAIgvqAZ0LXQG4lVPoXgYmK1oX1STjx2ps2UKXMHFbxoANB9gfnouKzpB46YRmMPRRZDqpFkfm/NYmJxgs9nuOkYRpz+ShDA5gnOGTeOQoOxEScCSBDhV0lKS6sHz4oQ3sYhTcOvMOXjxovevBsffkXWT8Pa8aJmLOLRuKRDgwZpz501FZkBACp3b7Ti1wZ8O45zwUuxsea9mhNUfHwavcv+xnpFtV+eTK5DELO6qOFTVf9OzpQVK9dB1qPffOvzASSYLSWjFFIsSyDfvjGroDHlF5XTpU="
+  file_glob: true
+  file: "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl"
+  skip_cleanup: true
+  on:
+    repo: udon2/udon2-wheels
+    tags: true
