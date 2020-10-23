@@ -1,5 +1,5 @@
 function pre_build {
-    bash udon2/tools/install-boost.sh
+    sudo apt-get install libboost-python-dev
 }
 
 function run_tests {
