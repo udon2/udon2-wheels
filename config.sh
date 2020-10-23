@@ -1,5 +1,5 @@
 function pre_build {
-    sudo apt-get install libboost-python-dev
+    apt-get install libboost-python-dev
 }
 
 function run_tests {
