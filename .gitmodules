@@ -1,0 +1,6 @@
+[submodule "multibuild"]
+	path = multibuild
+	url = https://github.com/matthew-brett/multibuild.git
+[submodule "udon2"]
+	path = udon2
+	url = https://github.com/udon2/udon2
