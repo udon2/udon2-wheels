@@ -3,6 +3,7 @@ function pre_build {
     cp -r boost-python-manylinux2010 boost
     ls
     export CUR_DIR=`pwd`
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/lib"
 }
 
 function run_tests {
