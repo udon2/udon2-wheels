@@ -55,8 +55,8 @@ build_script:
   - python -m pip install wheel
   - cd %REPO_DIR%
   - git checkout %BUILD_COMMIT%
-  - set CUR_DIR="C:\Libraries\boost_1_73_0"
-  - dir C:\Libraries\boost_1_73_0
+  - set CUR_DIR="C:\Libraries\boost_1_69_0"
+  - dir C:\Libraries\boost_1_69_0
   - python setup.py bdist_wheel
   - cd ..
 
