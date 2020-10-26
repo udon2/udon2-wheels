@@ -2,8 +2,8 @@ function pre_build {
     yum install -y wget
     wget https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
     tar --bzip2 -xf boost_1_74_0.tar.bz2
-    mv boost_1_74_0 boost
-    cp -r "boost-python-manylinux2010-$PLAT/*" boost
+    cp -r "boost-python-manylinux2010-$PLAT/" boost
+    mv boost_1_74_0/* boost
     ls
     export CUR_DIR=`pwd`
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
