@@ -3,7 +3,8 @@ function pre_build {
     wget https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
     tar --bzip2 -xf boost_1_74_0.tar.bz2
     cp -r "boost-python-manylinux2010-$PLAT/" boost
-    mv boost_1_74_0/boost/* boost
+    mkdir boost/include
+    mv boost_1_74_0/boost/* boost/include
     ls boost
     pwd
     export CUR_DIR=`pwd`
