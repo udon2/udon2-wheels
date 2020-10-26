@@ -55,7 +55,7 @@ build_script:
   - python -m pip install wheel
   - cd %REPO_DIR%
   - git checkout %BUILD_COMMIT%
-  - set BOOST_DIR="C:\Libraries\boost_1_69_0"
+  - set BOOST_DIR=C:\Libraries\boost_1_69_0
   - dir C:\Libraries\boost_1_69_0\lib32-msvc-14.0
   - python setup.py bdist_wheel
   - cd ..
