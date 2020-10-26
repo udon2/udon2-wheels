@@ -1,4 +1,5 @@
 function pre_build {
+    yum install boost-static
     cp -r boost-python-manylinux2010 boost
 }
 
