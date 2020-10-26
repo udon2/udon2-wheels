@@ -1,6 +1,8 @@
 function pre_build {
     yum install -y boost-static
     cp -r boost-python-manylinux2010 boost
+    ls
+    export CUR_DIR=`pwd`
 }
 
 function run_tests {
