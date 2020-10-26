@@ -7,7 +7,7 @@ function pre_build {
     mv boost_1_74_0/boost boost/include
     ls boost
     pwd
-    export CUR_DIR=`pwd`
+    export BOOST_DIR="`pwd`/boost"
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
 }
 

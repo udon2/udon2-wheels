@@ -9,7 +9,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: a23d280846319e1ce3edc80faf81f7ef815a0ea8
+    BUILD_COMMIT: 33ab9a8613f834408f7d65dd6b042a77f94eb631
     OTHER_BUILD_DEP: "six"
     OTHER_TEST_DEP: "six"
 
@@ -55,7 +55,7 @@ build_script:
   - python -m pip install wheel
   - cd %REPO_DIR%
   - git checkout %BUILD_COMMIT%
-  - set CUR_DIR="C:\Libraries\boost_1_69_0"
+  - set BOOST_DIR="C:\Libraries\boost_1_69_0"
   - dir C:\Libraries\boost_1_69_0
   - python setup.py bdist_wheel
   - cd ..
