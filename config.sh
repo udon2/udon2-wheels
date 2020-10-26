@@ -4,7 +4,8 @@ function pre_build {
     tar --bzip2 -xf boost_1_74_0.tar.bz2
     cp -r "boost-python-manylinux2010-$PLAT/" boost
     mv boost_1_74_0/boost/* boost
-    ls
+    ls boost
+    pwd
     export CUR_DIR=`pwd`
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
 }
