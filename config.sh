@@ -1,5 +1,5 @@
 function pre_build {
-    apt-get install libboost-python-dev
+    cp -r boost-python-manylinux2010 boost
 }
 
 function run_tests {
