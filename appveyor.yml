@@ -7,19 +7,19 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: 3a97184df317c0c8a8576d7376e6455f3f8370f2
+    BUILD_COMMIT: f0b2217fa8bad42bccd85ea1992ef7f2afd79ddc
     OTHER_BUILD_DEP: "six"
     OTHER_TEST_DEP: "six"
 
   matrix:
-    - PYTHON: C:\Python36
-      PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_67_0
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    - PYTHON: C:\Python36-x64
-      PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_67_0
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    # - PYTHON: C:\Python36
+    #   PYTHON_ARCH: "32"
+    #   BOOST_DIR: C:\Libraries\boost_1_69_0
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    # - PYTHON: C:\Python36-x64
+    #   PYTHON_ARCH: "64"
+    #   BOOST_DIR: C:\Libraries\boost_1_69_0
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     - PYTHON: C:\Python37
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_71_0
@@ -57,6 +57,7 @@ install:
   # Check that we have the expected version and architecture for Python
   - python --version
   - python -c "import struct; print(struct.calcsize('P') * 8)"
+  - dir C:\Libraries\boost_1_67_0
 
 build_script:
   # Install the dependencies of the project.
