@@ -16,10 +16,10 @@ environment:
   matrix:
     - PYTHON: C:\Python36
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_65_1
+      BOOST_DIR: C:\Libraries\boost_1_69_0
     - PYTHON: C:\Python36-x64
       PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_65_1
+      BOOST_DIR: C:\Libraries\boost_1_69_0
     - PYTHON: C:\Python37
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_69_0
@@ -58,7 +58,7 @@ build_script:
   # Install the dependencies of the project.
   - python -m pip install %OTHER_BUILD_DEP%
   # Build wheel
-  - python -m pip install wheel
+  - python -m pip install -U wheel
   - cd %REPO_DIR%
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel
