@@ -3,8 +3,6 @@
 # Largely from:
 # https://github.com/MacPython/cython-wheels/blob/master/appveyor.yml
 
-image: Visual Studio 2019
-
 environment:
   global:
     REPO_DIR: udon2
@@ -16,22 +14,28 @@ environment:
   matrix:
     - PYTHON: C:\Python36
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_71_0
+      BOOST_DIR: C:\Libraries\boost_1_63_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     - PYTHON: C:\Python36-x64
       PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_71_0
+      BOOST_DIR: C:\Libraries\boost_1_63_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     - PYTHON: C:\Python37
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_71_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
     - PYTHON: C:\Python37-x64
       PYTHON_ARCH: "64"
       BOOST_DIR: C:\Libraries\boost_1_71_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
     - PYTHON: C:\Python38
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
     - PYTHON: C:\Python38-x64
       PYTHON_ARCH: "64"
       BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
 
 install:
   # Fetch submodules
@@ -63,6 +67,8 @@ build_script:
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel
   - cd ..
+  - python -m pip install -U pefile machomachomangler
+  - python udon2/tools/winauditwheel.py -p udon2 -v 0.1a0
 
 artifacts:
   - path: "%REPO_DIR%\\dist\\*"
