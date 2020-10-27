@@ -7,7 +7,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: f0b2217fa8bad42bccd85ea1992ef7f2afd79ddc
+    BUILD_COMMIT: 3f00ed65a563b30e006db9352ab11842aa0c4a96
     OTHER_BUILD_DEP: "six"
     OTHER_TEST_DEP: "six"
 
@@ -66,7 +66,6 @@ build_script:
   - cd %REPO_DIR%
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel
-  - cd ..
   - python -m pip install -U pefile machomachomangler
   - python udon2/tools/winauditwheel.py -p udon2 -v 0.1a0
 
