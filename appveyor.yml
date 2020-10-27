@@ -7,7 +7,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: 315711a93ffeac088e6a595a4e23902313efac07
+    BUILD_COMMIT: v0.1a1
     OTHER_BUILD_DEP: "six"
     OTHER_TEST_DEP: "six"
 
