@@ -57,7 +57,6 @@ install:
   # Check that we have the expected version and architecture for Python
   - python --version
   - python -c "import struct; print(struct.calcsize('P') * 8)"
-  - dir C:\Libraries\boost_1_67_0
 
 build_script:
   # Install the dependencies of the project.
