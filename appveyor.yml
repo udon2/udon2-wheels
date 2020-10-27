@@ -3,6 +3,8 @@
 # Largely from:
 # https://github.com/MacPython/cython-wheels/blob/master/appveyor.yml
 
+image: Visual Studio 2019
+
 environment:
   global:
     REPO_DIR: udon2
@@ -14,28 +16,22 @@ environment:
   matrix:
     - PYTHON: C:\Python36
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_65_1
-      image: Visual Studio 2015
+      BOOST_DIR: C:\Libraries\boost_1_71_0
     - PYTHON: C:\Python36-x64
       PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_65_1
-      image: Visual Studio 2015
+      BOOST_DIR: C:\Libraries\boost_1_71_0
     - PYTHON: C:\Python37
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_69_0
-      image: Visual Studio 2015
+      BOOST_DIR: C:\Libraries\boost_1_71_0
     - PYTHON: C:\Python37-x64
       PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_69_0
-      image: Visual Studio 2015
+      BOOST_DIR: C:\Libraries\boost_1_71_0
     - PYTHON: C:\Python38
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_71_0
-      image: Visual Studio 2019
     - PYTHON: C:\Python38-x64
       PYTHON_ARCH: "64"
       BOOST_DIR: C:\Libraries\boost_1_71_0
-      image: Visual Studio 2019
 
 install:
   # Fetch submodules
