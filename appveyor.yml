@@ -67,7 +67,8 @@ build_script:
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel
   - python -m pip install -U pefile machomachomangler
-  - python udon2/tools/winauditwheel.py -p udon2 -v 0.1a0
+  - python tools/winauditwheel.py -p udon2 -v 0.1a0
+  - cd ..
 
 artifacts:
   - path: "%REPO_DIR%\\dist\\*"
