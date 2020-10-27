@@ -9,7 +9,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: 33ab9a8613f834408f7d65dd6b042a77f94eb631
+    BUILD_COMMIT: b42903d61246aa857952bb11fa7389c666650462
     OTHER_BUILD_DEP: "six"
     OTHER_TEST_DEP: "six"
 
@@ -43,7 +43,7 @@ install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
-  - SET PATH=%PYTHON%;%PYTHON%\Scripts;%BOOST_DIR%;%PATH%
+  - SET PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
   - python -m pip install -U pip setuptools
 
   # Fix MSVC builds for 64-bit Python. See:
