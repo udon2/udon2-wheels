@@ -28,10 +28,10 @@ environment:
       BOOST_DIR: C:\Libraries\boost_1_71_0
     - PYTHON: C:\Python38
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_71_0
+      BOOST_DIR: C:\Libraries\boost_1_73_0
     - PYTHON: C:\Python38-x64
       PYTHON_ARCH: "64"
-      BOOST_DIR: C:\Libraries\boost_1_71_0
+      BOOST_DIR: C:\Libraries\boost_1_73_0
 
 install:
   # Fetch submodules
