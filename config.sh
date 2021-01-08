@@ -1,7 +1,7 @@
 function pre_build {
     yum install -y wget
     yum install -y ca-certificates
-    wget https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
+    wget http://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
     tar --bzip2 -xf boost_1_74_0.tar.bz2
     cp -r "boost-python-manylinux2010-$PLAT/" boost
     mkdir boost/include
