@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=udon2
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=v0.1b2
+        - BUILD_COMMIT=v0.1b3
         # pip dependencies to _build_ your project
         - BUILD_DEPENDS="six svgling"
         # pip dependencies to _test_ your project.  Include any dependencies
@@ -95,7 +95,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: "iC8gHFYaDvPbjsWRwzPoK33CFdmAGgP8jqmd17XQADFV7druuH1S/HPZnGL4eUUT0p6t7yJHQPK+yGvo8bpBJ0hMzYoHzU1NSKEO2WzgzWKCOqfRw/EiDsBb3Com8Xf2cyPUGqEa8yol38byKS1CJXqSzLEC//0uwUdMidqp/9TxO7Evo6Em6xXPC31nPdPNqs5FP6teV3stZfX3+Ges5suWj24lX9CPZnSNUpxeIWZBkpGJmYlfApgSiO6KpmQ4w4TFeDo73SXTxTGtyFTtu/XnaXfIBIsu01EEgSNzsXLLQ+8LTdQFpRbxXfIKHj1zaQRyTgRCu511sCgq5dy2MLSBF3nEzUimuUEgv6Xtf9CqlVsp5C2pLVn/Br87fxtSBTb1Jq7dTOZqtxAIgvqAZ0LXQG4lVPoXgYmK1oX1STjx2ps2UKXMHFbxoANB9gfnouKzpB46YRmMPRRZDqpFkfm/NYmJxgs9nuOkYRpz+ShDA5gnOGTeOQoOxEScCSBDhV0lKS6sHz4oQ3sYhTcOvMOXjxovevBsffkXWT8Pa8aJmLOLRuKRDgwZpz501FZkBACp3b7Ti1wZ8O45zwUuxsea9mhNUfHwavcv+xnpFtV+eTK5DELO6qOFTVf9OzpQVK9dB1qPffOvzASSYLSWjFFIsSyDfvjGroDHlF5XTpU="
+    secure: "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"
   file_glob: true
   file: "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl"
   skip_cleanup: true
