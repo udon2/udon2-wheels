@@ -95,7 +95,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: "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"
+    secure: "lW9Av4tFHr82Pk63vPx8Ce4cEUL3h8pcX/9CMJf/YrZeWh5vCYHLVx73dtAKXoZC5MoYGnKtxLytKe/9HqifSGP9Ryj/Okh0Hl9wDudkyLnkhxDdQrZaXG5/Zk4Hwvfc8bDjEYM1qnmNynt4U6JbouE+1Ti8uQjwTEg/P8jh0nczs4VnnEN8/0VjPBgxQ0McX/p1fNibpkr3Iacyd7E0b6R+rHNj3eH0jtQNEiYUwKpnx1tRYcFa7GBn4ddMtHWZVcV/LdnFvk0dqdk9hO1an0ZiJaXLKxFcaUPt7n9+H9VXUUR+q9yKb66cFOGBVBOXLDWJL/4pf78Z7oT++KZF7iQL4TDr+J6Qr2XtQ2jgj1ewbJd11tPDYPv/hH4EiDhzref2THUuNuNFv4EdyST+jlvue2n2F6UoVZgWOncrVkAXVtp/JHkqV339X5mg36YEdx4a5vLE+3UMISxTvNkgOv+YMsxdOv/lXhOuxvF0s+PrcfMvKJY67Rk8lC9SRd4c2fPwanITDxaEBJY9QqCqYGoM+iVAwHP5GbgJLd0S2nDA8pK57bevnPWbTMVUUfTkT0PfGwBuh6bkNzvKmh+sE7lBG11XBjfhRarCnVgtLbaQxRX3pY2sgYGDl8y/I0Bh0xzX3Abd/eaon2T1PEgVF2Q+hJiPspN/09urmuc2gEM="
   file_glob: true
   file: "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl"
   skip_cleanup: true
