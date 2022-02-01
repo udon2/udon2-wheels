@@ -12,8 +12,7 @@ function pre_build {
         export BOOST_DIR="`pwd`/boost"
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
     else
-        brew install boost --with-python
-        brew install boost-python
+        brew install boost-python3
         brew list | grep 'boost'
         brew info boost-python
         export BOOST_DIR="`pwd`/boost"
