@@ -38,46 +38,50 @@ dist: xenial
 
 matrix:
   include:
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=x86_64
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=x86_64
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=i686
-        - MB_ML_VER=2010
-    - os: linux
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=x86_64
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=i686
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=x86_64
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=i686
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=x86_64
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=i686
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.9
+    #     - PLAT=x86_64
+    #     - MB_ML_VER=2010
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.9
+    #     - PLAT=i686
+    #     - MB_ML_VER=2010
+    - os: osx
       env:
         - MB_PYTHON_VERSION=3.8
-        - PLAT=x86_64
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - PLAT=i686
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.9
-        - PLAT=x86_64
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.9
-        - PLAT=i686
-        - MB_ML_VER=2010
+        - VENV=venv
 
 before_install:
     - source multibuild/common_utils.sh
