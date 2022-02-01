@@ -79,7 +79,7 @@ matrix:
     #     - PLAT=i686
     #     - MB_ML_VER=2010
     - os: osx
-      osx_image: xcode10
+      osx_image: xcode11
       env:
         - MB_PYTHON_VERSION=3.8
         - VENV=venv
