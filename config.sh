@@ -15,6 +15,7 @@ function pre_build {
         brew install boost-python3
         brew list | grep 'boost'
         brew info boost-python3
+        python3 --version
         echo "ls"
         ls /usr/local/Cellar/boost-python3/1.76.0/lib
         export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
