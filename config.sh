@@ -13,6 +13,7 @@ function pre_build {
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
     else
         python3 --version
+        ls
 
         if [ "$MB_PYTHON_VERSION" = "3.9" ]; then
             brew install boost-python3
@@ -22,7 +23,7 @@ function pre_build {
             ls /usr/local/Cellar/boost-python3/1.76.0/lib
             export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
         elif [ "$MB_PYTHON_VERSION" = "3.8" ]; then
-            brew install --build-from-source ./formulas/boost-python38.rb
+            brew install ./formulas/boost-python38.rb
             echo "ls1"
             ls /usr/local/Cellar/
             echo "ls2"
