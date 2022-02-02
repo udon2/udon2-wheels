@@ -16,11 +16,9 @@ function pre_build {
         brew list | grep 'boost'
         brew info boost-python3
         echo "ls"
-        ls /usr/local/Cellar/boost-python3/1.76.0
-        echo "pwd"
-        pwd
-        export BOOST_DIR="`pwd`/boost"
-        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
+        ls /usr/local/Cellar/boost-python3/1.76.0/lib
+        export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$BOOST_DIR/lib"
     fi
 }
 
