@@ -12,13 +12,22 @@ function pre_build {
         export BOOST_DIR="`pwd`/boost"
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/boost/lib"
     else
-        brew install boost-python3
-        brew list | grep 'boost'
-        brew info boost-python3
         python3 --version
-        echo "ls"
-        ls /usr/local/Cellar/boost-python3/1.76.0/lib
-        export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
+
+        if [ "$MB_PYTHON_VERSION" = "3.9" ]; then
+            brew install boost-python3
+            brew list | grep 'boost'
+            brew info boost-python3
+            echo "ls"
+            ls /usr/local/Cellar/boost-python3/1.76.0/lib
+            export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
+        elif [ "$MB_PYTHON_VERSION" = "3.8" ]; then
+            brew install --build-from-source ./formulas/boost-python38.rb
+            echo "ls1"
+            ls /usr/local/Cellar/
+            echo "ls2"
+            ls /usr/local/Cellar/boost-python3/1.74.0/lib
+        fi
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$BOOST_DIR/lib"
     fi
 }
