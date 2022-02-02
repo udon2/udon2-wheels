@@ -1,4 +1,4 @@
-class BoostPython3 < Formula
+class BoostPython38 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
   url "https://boostorg.jfrog.io/artifactory/main/release/1.74.0//source/boost_1_74_0.tar.bz2"

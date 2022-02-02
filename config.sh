@@ -27,7 +27,7 @@ function pre_build {
             echo "ls1"
             ls /usr/local/Cellar/
             echo "ls2"
-            ls /usr/local/Cellar/boost-python3/1.74.0/lib
+            ls /usr/local/Cellar/boost-python38/1.74.0/lib
         fi
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$BOOST_DIR/lib"
     fi
