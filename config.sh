@@ -30,7 +30,7 @@ function pre_build {
         elif [ "$MB_PYTHON_VERSION" = "3.7" ]; then
             brew install ./formulas/boost-python37.rb
             echo "ls2"
-            ls /usr/local/Cellar/boost-python37/1.74.0/lib
+            ls /usr/local/Cellar/boost-python37/1.72.0/lib
             export BOOST_DIR="/usr/local/Cellar/boost-python37/1.72.0"
         fi
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$BOOST_DIR/lib"
