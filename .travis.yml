@@ -83,11 +83,11 @@ matrix:
     #   env:
     #     - MB_PYTHON_VERSION=3.9
     #     - VENV=venv
-    - os: osx
-      osx_image: xcode11.6
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - VENV=venv
+    # - os: osx
+    #   osx_image: xcode11.6
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - VENV=venv
     - os: osx
       osx_image: xcode11.3
       env:
