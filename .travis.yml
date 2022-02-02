@@ -81,7 +81,7 @@ matrix:
     - os: osx
       osx_image: xcode12.5
       env:
-        - MB_PYTHON_VERSION=3.8
+        - MB_PYTHON_VERSION=3.9
         - VENV=venv
 
 before_install:
