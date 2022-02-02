@@ -1,7 +1,7 @@
 class BoostPython38 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://boostorg.jfrog.io/artifactory/main/release/1.74.0//source/boost_1_74_0.tar.bz2"
+  url "https://boostorg.jfrog.io/artifactory/main/release/1.74.0/source/boost_1_74_0.tar.bz2"
   sha256 "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
