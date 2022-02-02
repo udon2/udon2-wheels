@@ -88,6 +88,11 @@ matrix:
       env:
         - MB_PYTHON_VERSION=3.8
         - VENV=venv
+    - os: osx
+      osx_image: xcode11.3
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - VENV=venv
 
 before_install:
     - source multibuild/common_utils.sh

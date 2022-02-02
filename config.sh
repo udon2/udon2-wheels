@@ -24,10 +24,14 @@ function pre_build {
             export BOOST_DIR="/usr/local/Cellar/boost-python3/1.76.0"
         elif [ "$MB_PYTHON_VERSION" = "3.8" ]; then
             brew install ./formulas/boost-python38.rb
-            echo "ls1"
-            ls /usr/local/Cellar/
             echo "ls2"
             ls /usr/local/Cellar/boost-python38/1.74.0/lib
+            export BOOST_DIR="/usr/local/Cellar/boost-python38/1.74.0"
+        elif [ "$MB_PYTHON_VERSION" = "3.7" ]; then
+            brew install ./formulas/boost-python37.rb
+            echo "ls2"
+            ls /usr/local/Cellar/boost-python37/1.74.0/lib
+            export BOOST_DIR="/usr/local/Cellar/boost-python37/1.74.0"
         fi
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$BOOST_DIR/lib"
     fi
