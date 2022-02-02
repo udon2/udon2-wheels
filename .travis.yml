@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=udon2
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=c33bb0f2b56fb1da75a3db953ca0a61805aa101b
+        - BUILD_COMMIT=b10f3e718727e724be106408beb988be35111f83
         # pip dependencies to _build_ your project
         - BUILD_DEPENDS="six svgling"
         # pip dependencies to _test_ your project.  Include any dependencies
