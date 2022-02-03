@@ -7,7 +7,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: v0.1b3
+    BUILD_COMMIT: 77f1990e5e28a1a9186fd3895026eac50839246c
     OTHER_BUILD_DEP: "six svgling"
     OTHER_TEST_DEP: "six svgling"
 
@@ -36,6 +36,22 @@ environment:
       PYTHON_ARCH: "64"
       BOOST_DIR: C:\Libraries\boost_1_73_0
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    - PYTHON: C:\Python39
+      PYTHON_ARCH: "32"
+      BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
+    - PYTHON: C:\Python39-x64
+      PYTHON_ARCH: "64"
+      BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
+    - PYTHON: C:\Python310
+      PYTHON_ARCH: "32"
+      BOOST_DIR: C:\Libraries\boost_1_77_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
+    - PYTHON: C:\Python310-x64
+      PYTHON_ARCH: "64"
+      BOOST_DIR: C:\Libraries\boost_1_77_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
 
 install:
   # Fetch submodules

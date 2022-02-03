@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=udon2
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=05ef725608ce5814cd081339986b7bb34257edc6
+        - BUILD_COMMIT=77f1990e5e28a1a9186fd3895026eac50839246c
         # pip dependencies to _build_ your project
         - BUILD_DEPENDS="six svgling"
         # pip dependencies to _test_ your project.  Include any dependencies
@@ -38,56 +38,66 @@ dist: xenial
 
 matrix:
   include:
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.6
-    #     - PLAT=x86_64
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.6
-    #     - PLAT=i686
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.7
-    #     - PLAT=x86_64
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.7
-    #     - PLAT=i686
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.8
-    #     - PLAT=x86_64
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.8
-    #     - PLAT=i686
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.9
-    #     - PLAT=x86_64
-    #     - MB_ML_VER=2010
-    # - os: linux
-    #   env:
-    #     - MB_PYTHON_VERSION=3.9
-    #     - PLAT=i686
-    #     - MB_ML_VER=2010
-    # - os: osx
-    #   osx_image: xcode12.5
-    #   env:
-    #     - MB_PYTHON_VERSION=3.9
-    #     - VENV=venv
-    # - os: osx
-    #   osx_image: xcode11.6
-    #   env:
-    #     - MB_PYTHON_VERSION=3.8
-    #     - VENV=venv
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=x86_64
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=x86_64
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=x86_64
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=x86_64
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.10
+        - PLAT=x86_64
+        - MB_ML_VER=2010
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.10
+        - PLAT=i686
+        - MB_ML_VER=2010
+    - os: osx
+      osx_image: xcode12.5
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - VENV=venv
+    - os: osx
+      osx_image: xcode11.6
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - VENV=venv
     - os: osx
       osx_image: xcode11.3
       env:
