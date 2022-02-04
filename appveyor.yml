@@ -7,7 +7,7 @@ environment:
   global:
     REPO_DIR: udon2
     PACKAGE_NAME: udon2
-    BUILD_COMMIT: 54856e4443b66bac735dc6665f4621031091b161
+    BUILD_COMMIT: v0.1.0
     OTHER_BUILD_DEP: "six svgling"
     OTHER_TEST_DEP: "six svgling"
 
@@ -20,42 +20,32 @@ environment:
     #   PYTHON_ARCH: "64"
     #   BOOST_DIR: C:\Libraries\boost_1_69_0
     #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    # - PYTHON: C:\Python37
-    #   PYTHON_ARCH: "32"
-    #   BOOST_DIR: C:\Libraries\boost_1_69_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    # - PYTHON: C:\Python37-x64
-    #   PYTHON_ARCH: "64"
-    #   BOOST_DIR: C:\Libraries\boost_1_69_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    # - PYTHON: C:\Python38
-    #   PYTHON_ARCH: "32"
-    #   BOOST_DIR: C:\Libraries\boost_1_73_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-    # - PYTHON: C:\Python38-x64
-    #   PYTHON_ARCH: "64"
-    #   BOOST_DIR: C:\Libraries\boost_1_73_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    - PYTHON: C:\Python37
+      PYTHON_ARCH: "32"
+      BOOST_DIR: C:\Libraries\boost_1_69_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    - PYTHON: C:\Python37-x64
+      PYTHON_ARCH: "64"
+      BOOST_DIR: C:\Libraries\boost_1_69_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    - PYTHON: C:\Python38
+      PYTHON_ARCH: "32"
+      BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    - PYTHON: C:\Python38-x64
+      PYTHON_ARCH: "64"
+      BOOST_DIR: C:\Libraries\boost_1_73_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
     - PYTHON: C:\Python39
       PYTHON_ARCH: "32"
       BOOST_DIR: C:\Libraries\boost_1_77_0
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
-    # - PYTHON: C:\Python39-x64
-    #   PYTHON_ARCH: "64"
-    #   BOOST_DIR: C:\Libraries\boost_1_73_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
-    # - PYTHON: C:\Python310
-    #   PYTHON_ARCH: "32"
-    #   BOOST_DIR: C:\Libraries\boost_1_77_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
-    # - PYTHON: C:\Python310-x64
-    #   PYTHON_ARCH: "64"
-    #   BOOST_DIR: C:\Libraries\boost_1_77_0
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
+    - PYTHON: C:\Python39-x64
+      PYTHON_ARCH: "64"
+      BOOST_DIR: C:\Libraries\boost_1_77_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
 
 install:
-  - dir C:\Libraries\boost_1_77_0\lib32-msvc-14.2
-
   # Fetch submodules
   - git submodule update --init --recursive
 
