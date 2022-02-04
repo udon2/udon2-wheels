@@ -7,4 +7,5 @@ The building is done through Travis CI for Linux and AppVeyor for Windows using 
 
 Currently supported platforms:
 - Linux (i686 and x86_64) for Python 3.6 - 3.9
-- Windows (win32 and win_amd64) for Python 3.7, 3.8
+- Windows (win32 and win_amd64) for Python 3.7 - 3.9
+- macOS (x86_64) for Python 3.7 - 3.9
