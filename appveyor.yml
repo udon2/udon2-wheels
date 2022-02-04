@@ -22,8 +22,8 @@ environment:
     #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     - PYTHON: C:\Python37
       PYTHON_ARCH: "32"
-      BOOST_DIR: C:\Libraries\boost_1_71_0
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      BOOST_DIR: C:\Libraries\boost_1_69_0
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     # - PYTHON: C:\Python37-x64
     #   PYTHON_ARCH: "64"
     #   BOOST_DIR: C:\Libraries\boost_1_71_0
@@ -54,7 +54,7 @@ environment:
     #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
 
 install:
-  - dir C:\Libraries
+  - dir C:\Libraries\boost_1_69_0
 
   # Fetch submodules
   - git submodule update --init --recursive
