@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=udon2
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=77f1990e5e28a1a9186fd3895026eac50839246c
+        - BUILD_COMMIT=54856e4443b66bac735dc6665f4621031091b161
         # pip dependencies to _build_ your project
         - BUILD_DEPENDS="six svgling"
         # pip dependencies to _test_ your project.  Include any dependencies
@@ -76,16 +76,6 @@ matrix:
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.9
-        - PLAT=i686
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.10
-        - PLAT=x86_64
-        - MB_ML_VER=2010
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.10
         - PLAT=i686
         - MB_ML_VER=2010
     - os: osx
