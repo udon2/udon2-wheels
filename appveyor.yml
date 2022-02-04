@@ -54,7 +54,7 @@ environment:
     #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
 
 install:
-  - dir C:\Libraries\boost_1_71_0\
+  - dir C:\Libraries
 
   # Fetch submodules
   - git submodule update --init --recursive
